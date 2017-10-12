@@ -41,8 +41,8 @@ const classesAsObject = classes.map(([subject, time, teacher]) => {
   return {subject, time, teacher}
 })
 
-// reorgaize array of objects into object with key value pair
+// reorgaize array of objects into object with element.key element.value pair
 const formatObj = (arr) => arr.reduce((acc, element) => {
-      acc[element.key] = element.value;
-      return acc;
-    }, {});
+  acc[element.key] = element.value;
+  return acc;
+}, {});
