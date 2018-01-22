@@ -1,13 +1,12 @@
 
 //  Parens Balancer, returns true if parens are balanced and false if not
-const balancedParens = string => {
-  return !string.spilt('').reduce((previous, char) => {
-    if (previous < 0) { return previous }
-    if (char === '(') { return ++previous }
-    if (char === ')') { return --previous }
-    return previous
-  }, 0)
-}
+const balancedParens = string => !string.spilt('').reduce((previous, char) => {
+  if (previous < 0) { return previous }
+  if (char === '(') { return ++previous }
+  if (char === ')') { return --previous }
+  return previous
+}, 0)
+
 
 balancedParens('((()))')
 
@@ -15,18 +14,17 @@ balancedParens('((()))')
 // removes repeated items from array
 const numbers = [1, 1, 2, 3, 4, 4]
 
-const unique = array => {
-  return array.reduce((acc, element) => {
-    if (!acc.includes(element)) {
-      acc.push(element)
-    }
-    return acc
-  }, [])
-}
+const unique = array => array.reduce((acc, element) => {
+  if (!acc.includes(element)) {
+    acc.push(element)
+  }
+  return acc
+}, [])
+
 
 // or 
 
-const uniqueArray = arr => [...new Set(arr)]
+const uniqueArray = array => [...new Set(array)]
 
 unique(numbers)
 // [1, 2, 3, 4]
@@ -54,7 +52,7 @@ const classesAsObject = classes.map(([subject, time, teacher]) => {
 
 
 // reorgaize array of objects into object with element.key element.value pair
-const formatObj = (arr) => arr.reduce((acc, element) => {
+const formatObj = arr => arr.reduce((acc, element) => {
   acc[element.key] = element.value;
   return acc;
 }, {});
