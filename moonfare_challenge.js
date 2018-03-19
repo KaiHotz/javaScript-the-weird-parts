@@ -16,21 +16,6 @@ const movie_lengths = [120, 90, 30]
 
 const getMoviesForFlight = (movie_lengths, flight_length) => {
   let result = []
-  const movies = movie_lengths.reduce((acc, el) => {
-    let sum = acc + el
-    if (el < flight_length && sum <= flight_length) {
-      result.push(el)
-    }
-    return result
-  }, 0)
-
-  return movies
-}
-
-console.log(getMoviesForFlight(movie_lengths, flight_length))
-
-const getMoviesForFlight_2 = (movie_lengths, flight_length) => {
-  let result = []
   for (let i = 0; i < movie_lengths.length; i += 1) {
     for (let j = i + 1; j < movie_lengths.length; j += 1) {
       if (movie_lengths[j] === flight_length - movie_lengths[i]) {
