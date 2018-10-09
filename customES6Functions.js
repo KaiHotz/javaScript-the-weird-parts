@@ -32,6 +32,11 @@ uniqueArray(numbers)
 // [1, 2, 3, 4]
 
 
+// Remove duplicates from collection
+const removeDuplicates = (coll, prop) =>  
+  coll.filter((obj, pos, arr) => 
+    arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos)
+
 // Calculates the fibonacci number given a regular number
 const fibonacci = n => {
   if (n < 3) return 1
